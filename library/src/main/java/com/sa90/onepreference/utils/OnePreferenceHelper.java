@@ -2,7 +2,6 @@ package com.sa90.onepreference.utils;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.XmlRes;
 
