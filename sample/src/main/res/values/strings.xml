@@ -4,4 +4,5 @@
     <string name="header1">Header 1</string>
     <string name="header2">Header 2</string>
     <string name="header3">About</string>
+    <string name="title_activity_phone_preference">PhonePreferenceActivity</string>
 </resources>

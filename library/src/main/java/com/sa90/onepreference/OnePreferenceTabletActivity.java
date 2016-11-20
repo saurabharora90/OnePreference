@@ -43,14 +43,17 @@ public class OnePreferenceTabletActivity extends PreferenceActivity implements O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initToolbar();
+        init();
     }
 
     @Override
     public void showBreadCrumbs(CharSequence title, CharSequence shortTitle) {
     }
 
-    public void initToolbar() {
+    /**
+     * Adds a toolbar to the the page but you can override this method to add anything that you feel like
+     */
+    public void init() {
         LinearLayout root = getRootView();
         Toolbar toolbar = (Toolbar) LayoutInflater.from(this).inflate(R.layout.include_toolbar, root, false);
         root.addView(toolbar, 0);

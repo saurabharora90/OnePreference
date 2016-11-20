@@ -65,17 +65,19 @@ public class OnePreferencePhoneActivity extends AppCompatActivity implements One
     }
 
     protected void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.onePrefToolbar);
+        if(toolbar == null)
+            return;
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar!=null && getIntent().getBooleanExtra(OnePreferenceHelper.EXTRA_SHOW_BACK, false)) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+
             int backResId = getIntent().getIntExtra(OnePreferenceHelper.EXTRA_OVERRIDE_BACK_ICON, -1);
             if(backResId!=-1)
                 actionBar.setHomeAsUpIndicator(backResId);
         }
-
         actionBar.setTitle(getIntent().getStringExtra(OnePreferenceHelper.EXTRA_TITLE));
     }
 
@@ -109,6 +111,6 @@ public class OnePreferencePhoneActivity extends AppCompatActivity implements One
      */
     @Override
     public int getLayoutRes() {
-        return R.layout.activity_phone_preference;
+        return R.layout.activity_one_preference_phone;
     }
 }
