@@ -6,7 +6,11 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".PhonePreferenceActivity"/>
+        <activity android:name=".PhonePreferenceActivity"
+            android:theme="@style/PreferenceActivity"/>
+
+        <activity android:name=".TabletPreferenceActivity"
+            android:theme="@style/PreferenceActivity"/>
     </application>
 
 </manifest>
