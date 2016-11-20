@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<preference-headers xmlns:onepref="http://schemas.android.com/apk/res-auto">
+
+    <header
+        onepref:fragment="com.sa90.onepreferencedemo.fragment.Header1Fragment"
+        onepref:title="@string/header1" />
+    <header
+        onepref:fragment="com.sa90.onepreferencedemo.fragment.Header2Fragment"
+        onepref:title="@string/header2" />
+    <header
+        onepref:fragment="com.sa90.onepreferencedemo.fragment.AboutFragment"
+        onepref:title="@string/header3" />
+
+</preference-headers>

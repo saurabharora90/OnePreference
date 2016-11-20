@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">One Preference Demo</string>
+
+    <string name="header1">Header 1</string>
+    <string name="header2">Header 2</string>
+    <string name="header3">About</string>
 </resources>

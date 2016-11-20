@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/header3">
+        <Preference
+            android:key="key6"
+            android:title="Open Google.com">
+            <intent
+                android:targetClass="com.sa90.onepreferencedemo.WebActivity"
+                android:targetPackage="com.sa90.onepreferencedemo">
+                <extra android:name="extra_url" android:value="https://www.google.com.sg/" />
+            </intent>
+        </Preference>
+        <Preference
+            android:key="key7"
+            android:title="Open Yahoo.com">
+            <intent
+                android:targetClass="com.sa90.onepreferencedemo.WebActivity"
+                android:targetPackage="com.sa90.onepreferencedemo">
+                <extra android:name="extra_url" android:value="https://sg.yahoo.com/" />
+            </intent>
+        </Preference>
+
+        <Preference
+            android:key="key8"
+            android:title="Open Developer Android">
+            <intent
+                android:targetClass="com.sa90.onepreferencedemo.WebActivity"
+                android:targetPackage="com.sa90.onepreferencedemo">
+                <extra android:name="extra_url" android:value="https://developer.android.com/index.html" />
+            </intent>
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>
