@@ -15,7 +15,7 @@ import com.sa90.onepreference.utils.PreferenceHelper;
 
 import java.util.List;
 
-public class TabletPreferenceActivity extends PreferenceActivity implements OnePreference {
+public class OnePreferenceTabletActivity extends PreferenceActivity implements OnePreference {
 
     @Override
     public void onBuildHeaders(List<Header> target) {
@@ -46,6 +46,10 @@ public class TabletPreferenceActivity extends PreferenceActivity implements OneP
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initToolbar();
+    }
+
+    @Override
+    public void showBreadCrumbs(CharSequence title, CharSequence shortTitle) {
     }
 
     public void initToolbar() {

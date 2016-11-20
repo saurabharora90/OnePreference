@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.XmlRes;
 
-import com.sa90.onepreference.PhonePreferenceActivity;
-import com.sa90.onepreference.TabletPreferenceActivity;
+import com.sa90.onepreference.OnePreferencePhoneActivity;
+import com.sa90.onepreference.OnePreferenceTabletActivity;
 
 /**
  * Created by Saurabh Arora on 20/11/16.
@@ -36,9 +36,9 @@ public class OnePreferenceHelper {
             intent.putExtra(EXTRA_OVERRIDE_BACK_ICON, upIcon);
 
         if(ScreenUtils.isPhone(callingActivity))
-            intent.setClass(callingActivity, PhonePreferenceActivity.class);
+            intent.setClass(callingActivity, OnePreferencePhoneActivity.class);
         else
-            intent.setClass(callingActivity, TabletPreferenceActivity.class);
+            intent.setClass(callingActivity, OnePreferenceTabletActivity.class);
 
         callingActivity.startActivity(intent);
     }

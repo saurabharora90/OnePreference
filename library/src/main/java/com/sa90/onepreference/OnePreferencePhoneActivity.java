@@ -18,7 +18,7 @@ import com.sa90.onepreference.utils.PreferenceHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhonePreferenceActivity extends AppCompatActivity implements OnePreference {
+public class OnePreferencePhoneActivity extends AppCompatActivity implements OnePreference {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
