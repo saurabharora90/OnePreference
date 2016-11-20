@@ -2,8 +2,10 @@ package com.sa90.onepreference;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -43,17 +45,23 @@ public class TabletPreferenceActivity extends PreferenceActivity implements OneP
 
     public void initToolbar() {
         LinearLayout root = (LinearLayout) findViewById(android.R.id.list).getParent().getParent().getParent();
-        Toolbar toolbar = new Toolbar(this);
+        Toolbar toolbar = (Toolbar) LayoutInflater.from(this).inflate(R.layout.include_toolbar, root, false);
         root.addView(toolbar, 0);
 
-        toolbar.setTitle(getString(R.string.settings));
-        toolbar.setBackgroundResource(R.color.material_gray_toolbar);
-        toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbar.setTitle(getIntent().getStringExtra(OnePreferenceHelper.EXTRA_TITLE));
+        if(getIntent().getBooleanExtra(OnePreferenceHelper.EXTRA_SHOW_BACK, false)) {
+            int backResId = getIntent().getIntExtra(OnePreferenceHelper.EXTRA_OVERRIDE_BACK_ICON, -1);
+            if(backResId!=-1)
+                toolbar.setNavigationIcon(backResId);
+            else
+                toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
     }
 }

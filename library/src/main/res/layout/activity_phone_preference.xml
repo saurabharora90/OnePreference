@@ -6,10 +6,9 @@
     android:orientation="vertical"
     tools:context="com.sa90.onepreference.PhonePreferenceActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+   <include android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       layout="@layout/include_toolbar"/>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
