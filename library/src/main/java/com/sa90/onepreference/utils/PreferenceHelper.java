@@ -17,7 +17,6 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,25 +33,6 @@ import java.util.List;
 public class PreferenceHelper {
 
     private static final long HEADER_ID_UNDEFINED = -1;
-
-    /**
-     * Parses the header file to return a list of fragments referred to by each header item.
-     * This should be called only on phones as we tend to skip the headers and display all the preferences as a list.
-     *
-     * @param headerResource
-     * @param activity
-     * @return
-     */
-    public static List<PreferenceFragmentItem> getPreferenceFragmentList(@XmlRes int headerResource, Activity activity) {
-        List<PreferenceActivity.Header> headerList = new ArrayList<>();
-        loadHeadersFromResource(headerResource, headerList, activity);
-
-        List<PreferenceFragmentItem> fragmentItems = new ArrayList<>(headerList.size());
-        for (PreferenceActivity.Header header : headerList) {
-            fragmentItems.add(new PreferenceFragmentItem(header.fragment, header.fragment, header.fragmentArguments));
-        }
-        return fragmentItems;
-    }
 
     /**
      * Parse the given XML file as a header description, adding each

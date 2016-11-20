@@ -1,4 +1,4 @@
-package com.sa90.onepreference;
+package com.sa90.onepreference.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

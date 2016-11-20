@@ -1,4 +1,4 @@
-package com.sa90.onepreference.utils;
+package com.sa90.onepreference;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -11,19 +11,19 @@ import android.os.Parcelable;
  *
  * Note: Use this only to wrap {@link Fragment} which extend from {@link android.support.v14.preference.PreferenceFragment} and not for anything else
  */
-public class PreferenceFragmentItem implements Parcelable {
+class PreferenceFragmentItem implements Parcelable {
 
     private String mClassName;
     private String tag;
     private Bundle extras;
 
-    public PreferenceFragmentItem(String className, String tag, Bundle extras) {
+    PreferenceFragmentItem(String className, String tag, Bundle extras) {
         this.mClassName = className;
         this.tag = tag;
         this.extras = extras;
     }
 
-    public void addFragmentPage(String fragmentPage) {
+    void addFragmentPage(String fragmentPage) {
         this.tag = fragmentPage + "-" + tag;
     }
 
@@ -32,11 +32,11 @@ public class PreferenceFragmentItem implements Parcelable {
      * @param activity
      * @return
      */
-    public Fragment createFragment(Activity activity) {
+    Fragment createFragment(Activity activity) {
         return Fragment.instantiate(activity, mClassName, extras);
     }
 
-    public String getTag() {
+    String getTag() {
         return tag;
     }
 
