@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PreferenceHeader">
+        <!-- Identifier value for the header. -->
+        <attr name="id" format="integer"/>
+        <!-- The title of the item that is shown to the user. -->
+        <attr name="title" />
+        <!-- The summary for the item. -->
+        <attr name="summary" format="string" />
+        <!-- The title for the bread crumb of this item. -->
+        <attr name="breadCrumbTitle" format="string" />
+        <!-- The short title for the bread crumb of this item. -->
+        <attr name="breadCrumbShortTitle" format="string" />
+        <!-- An icon for the item. -->
+        <attr name="icon" />
+        <!-- The fragment that is displayed when the user selects this item. -->
+        <attr name="fragment" format="string" />
+    </declare-styleable>
+</resources>
