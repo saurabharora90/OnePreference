@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="OnePreference" parent="Theme.AppCompat.Light.NoActionBar"></style>
-
-    <style name="OnePreference.PreferenceActivity">
+    <style name="PreferenceActivity">
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
     </style>
 </resources>
