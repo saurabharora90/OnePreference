@@ -1,4 +1,4 @@
-package com.sa90.onepreference.utils;
+package com.sa90.onepreference;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -11,7 +11,6 @@ import android.util.DisplayMetrics;
  */
 
 class ScreenUtils {
-
 
     private static final double PHONE_THRESHOLD = 6.5;
     private static int TABLET_THRESHOLD = 600;
