@@ -23,6 +23,11 @@ public class TabletPreferenceActivity extends PreferenceActivity implements OneP
     }
 
     @Override
+    protected boolean isValidFragment(String fragmentName) {
+        return true;
+    }
+
+    @Override
     public int getHeaderFile() {
         return getIntent().getIntExtra(OnePreferenceHelper.EXTRA_HEADER_RES, -1);
     }

@@ -8,5 +8,9 @@
         <EditTextPreference
             android:key="key5"
             android:title="Click to enter text" />
+        <SwitchPreference
+            android:key="key12"
+            android:title="Final Switch"
+            android:defaultValue="true"/>
     </PreferenceCategory>
 </PreferenceScreen>
