@@ -6,22 +6,15 @@
     android:orientation="vertical"
     tools:context="com.sa90.onepreference.OnePreferencePhoneActivity">
 
-    <include android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/include_toolbar"/>
-
-    <android.support.v4.widget.NestedScrollView
+    <include
+        layout="@layout/include_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true">
+        android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
-    </android.support.v4.widget.NestedScrollView>
+    <include
+        layout="@layout/include_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
 
