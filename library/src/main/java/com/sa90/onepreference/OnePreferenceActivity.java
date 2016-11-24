@@ -6,10 +6,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import com.sa90.onepreference.adapter.HeaderAdapter;
+import com.sa90.onepreference.model.Header;
+
+import java.util.List;
 
 /**
  * Created by Saurabh Arora on 24/11/16.
@@ -19,6 +24,7 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
     LinearLayout llContainer;
     FrameLayout flContainer;
+    ListView lvHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,7 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
         llContainer = (LinearLayout) findViewById(R.id.llContainer);
         flContainer = (FrameLayout) findViewById(R.id.flContainer);
+        lvHeader = (ListView) findViewById(R.id.lvHeader);
 
         setupToolbar();
     }
@@ -75,13 +82,13 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
     @Nullable
     @Override
     public ListView getHeaderListView() {
-        return null;
+        return lvHeader;
     }
 
     @Nullable
     @Override
-    public BaseAdapter getHeaderListAdapter() {
-        return null;
+    public ArrayAdapter<Header> getHeaderListAdapter(List<Header> headerList) {
+        return new HeaderAdapter(this, headerList);
     }
 
     @NonNull

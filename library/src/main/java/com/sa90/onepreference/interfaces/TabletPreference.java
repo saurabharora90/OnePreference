@@ -1,9 +1,13 @@
 package com.sa90.onepreference.interfaces;
 
 import android.support.annotation.Nullable;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+
+import com.sa90.onepreference.model.Header;
+
+import java.util.List;
 
 /**
  * Created by Saurabh Arora on 24/11/16.
@@ -29,5 +33,6 @@ public interface TabletPreference extends OnePreference{
      * Returns the adapter that will be attached to the header ListView
      * @return
      */
-    @Nullable BaseAdapter getHeaderListAdapter();
+    @Nullable
+    ArrayAdapter<Header> getHeaderListAdapter(List<Header> headerList);
 }

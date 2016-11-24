@@ -3,11 +3,17 @@ package com.sa90.onepreference;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.sa90.onepreference.helper.PhonePreferenceHelper;
 import com.sa90.onepreference.helper.PreferenceHelper;
+import com.sa90.onepreference.helper.TabletPreferenceHelper;
 import com.sa90.onepreference.interfaces.PhonePreference;
 import com.sa90.onepreference.interfaces.TabletPreference;
 import com.sa90.onepreference.model.Header;
@@ -20,7 +26,7 @@ import java.util.List;
  */
 
 public abstract class BaseOnePreferenceActivity extends AppCompatActivity
-        implements PhonePreference, TabletPreference {
+        implements PhonePreference, TabletPreference, AdapterView.OnItemClickListener {
 
     /**
      * Returns true if the the preferences are being displayed in tablet mode.
@@ -51,7 +57,17 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
         init();
     }
 
+    /**
+     * Provides the subclasses with an opportunity to handle a click on a header item
+     * @param clickedHeader
+     */
+    public void headerClicked(Header clickedHeader) {
+        mTabletPreferenceHelper.switchFragment(clickedHeader);
+    }
+
     PhonePreferenceHelper mPhonePreferenceHelper;
+    TabletPreferenceHelper mTabletPreferenceHelper;
+    ArrayAdapter<Header> mHeaderAdapter;
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
@@ -73,13 +89,38 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
         if (mPhonePreferenceHelper == null)
             mPhonePreferenceHelper = new PhonePreferenceHelper(this, this);
 
-        List<Header> headerList = new ArrayList<>();
-        PreferenceHelper.loadHeadersFromResource(getHeaderFile(), headerList, this);
-        touchUpHeadersBeforeDisplay(headerList);
-        mPhonePreferenceHelper.setupScreen(headerList);
+        mPhonePreferenceHelper.setupScreen(getHeadersList());
     }
 
     private void setupForTablet() {
+        ListView lv = getHeaderListView();
+        if(mTabletPreferenceHelper == null) {
+            mTabletPreferenceHelper = new TabletPreferenceHelper(this, this);
+            mHeaderAdapter = getHeaderListAdapter(getHeadersList());
+            lv.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
+            lv.setAdapter(mHeaderAdapter);
+            lv.setOnItemClickListener(this);
+        }
+        else {
+            mHeaderAdapter.clear();
+            mHeaderAdapter.addAll(getHeadersList());
+            mHeaderAdapter.notifyDataSetChanged();
+        }
+        Header clickedHeader = mHeaderAdapter.getItem(0);
+        headerClicked(clickedHeader);
+        lv.setItemChecked(0,true);
+    }
 
+    private List<Header> getHeadersList() {
+        List<Header> headerList = new ArrayList<>();
+        PreferenceHelper.loadHeadersFromResource(getHeaderFile(), headerList, this);
+        touchUpHeadersBeforeDisplay(headerList);
+        return headerList;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Header clickedHeader = mHeaderAdapter.getItem(position);
+        headerClicked(clickedHeader);
     }
 }

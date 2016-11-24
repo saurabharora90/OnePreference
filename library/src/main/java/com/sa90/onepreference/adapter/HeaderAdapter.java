@@ -1,13 +1,16 @@
 package com.sa90.onepreference.adapter;
 
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.sa90.onepreference.R;
-import com.sa90.onepreference.adapter.viewholder.HeaderViewHolder;
 import com.sa90.onepreference.model.Header;
 
 import java.util.List;
@@ -16,22 +19,23 @@ import java.util.List;
  * Created by Saurabh Arora on 21/11/16.
  */
 
-public class HeaderAdapter extends RecyclerView.Adapter<HeaderViewHolder>{
+public class HeaderAdapter extends ArrayAdapter<Header> {
 
-    private List<Header> headerList;
-
-    public HeaderAdapter(List<Header> headerList) {
-        this.headerList = headerList;
+    public HeaderAdapter(Context context, List<Header> objects) {
+        super(context, -1, objects);
     }
 
+    @NonNull
     @Override
-    public HeaderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new HeaderViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.preference_header_item, parent, false));
-    }
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.preference_header_item, parent, false);
+            HeaderViewHolder headerViewHolder = new HeaderViewHolder(convertView);
+            convertView.setTag(headerViewHolder);
+        }
 
-    @Override
-    public void onBindViewHolder(HeaderViewHolder holder, int position) {
-        Header header = headerList.get(position);
+        HeaderViewHolder holder = (HeaderViewHolder) convertView.getTag();
+        Header header = getItem(position);
         if (header.iconRes == 0) {
             holder.icon.setVisibility(View.GONE);
         } else {
@@ -46,12 +50,18 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderViewHolder>{
         } else {
             holder.summary.setVisibility(View.GONE);
         }
+        return convertView;
     }
 
-    @Override
-    public int getItemCount() {
-        if(headerList == null)
-            return 0;
-        return headerList.size();
+    private static class HeaderViewHolder {
+
+        TextView summary, title;
+        ImageView icon;
+
+        HeaderViewHolder(View itemView) {
+            title = (TextView) itemView.findViewById(R.id.tvTitle);
+            summary = (TextView) itemView.findViewById(R.id.tvSummary);
+            icon = (ImageView) itemView.findViewById(R.id.icon);
+        }
     }
 }
