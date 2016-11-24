@@ -7,7 +7,6 @@ import android.widget.LinearLayout;
 
 import com.sa90.onepreference.interfaces.PhonePreference;
 import com.sa90.onepreference.model.Header;
-import com.sa90.onepreference.utils.PreferenceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,23 +29,6 @@ public class PhonePreferenceHelper {
         setupFragments(mPhonePreference.getFragmentContainerForPhone());
     }
 
-    /**
-     * Parses the header file to return a list of fragments referred to by each header item.
-     *
-     * @param headerResource
-     * @return
-     */
-    private List<PreferenceFragmentItem> getPreferenceFragmentList(@XmlRes int headerResource) {
-        List<Header> headerList = new ArrayList<>();
-        PreferenceHelper.loadHeadersFromResource(headerResource, headerList, this);
-
-        List<PreferenceFragmentItem> fragmentItems = new ArrayList<>(headerList.size());
-        for (Header header : headerList) {
-            fragmentItems.add(new PreferenceFragmentItem(header.fragment, header.fragment, header.fragmentArguments));
-        }
-        return fragmentItems;
-    }
-
     private void setupFragments(LinearLayout container) {
         if (container.getOrientation() != LinearLayout.VERTICAL)
             throw new IllegalArgumentException("The LinearLayout container should have a vertical orientation");
@@ -59,5 +41,22 @@ public class PhonePreferenceHelper {
             transaction.add(container.getId(), item.createFragment(mActivity), item.getTag());
         }
         transaction.commit();
+    }
+
+    /**
+     * Parses the header file to return a list of fragments referred to by each header item.
+     *
+     * @param headerResource
+     * @return
+     */
+    private List<PreferenceFragmentItem> getPreferenceFragmentList(@XmlRes int headerResource) {
+        List<Header> headerList = new ArrayList<>();
+        PreferenceHelper.loadHeadersFromResource(headerResource, headerList, mActivity);
+
+        List<PreferenceFragmentItem> fragmentItems = new ArrayList<>(headerList.size());
+        for (Header header : headerList) {
+            fragmentItems.add(new PreferenceFragmentItem(header.fragment, header.fragment, header.fragmentArguments));
+        }
+        return fragmentItems;
     }
 }

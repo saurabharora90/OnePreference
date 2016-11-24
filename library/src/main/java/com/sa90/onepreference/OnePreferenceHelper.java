@@ -1,4 +1,4 @@
-package com.sa90.onepreference.utils;
+package com.sa90.onepreference;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.support.annotation.XmlRes;
 
 import com.sa90.onepreference.OnePreferencePhoneActivity;
 import com.sa90.onepreference.OnePreferenceTabletActivity;
+import com.sa90.onepreference.utils.ScreenUtils;
 
 /**
  * Created by Saurabh Arora on 20/11/16.

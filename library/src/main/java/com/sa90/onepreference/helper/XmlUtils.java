@@ -1,4 +1,4 @@
-package com.sa90.onepreference.utils;
+package com.sa90.onepreference.helper;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

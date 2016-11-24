@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.sa90.onepreference.utils.OnePreferenceHelper;
+import com.sa90.onepreference.OnePreferenceHelper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

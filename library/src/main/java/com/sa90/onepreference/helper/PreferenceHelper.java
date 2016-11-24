@@ -1,4 +1,4 @@
-package com.sa90.onepreference.utils;
+package com.sa90.onepreference.helper;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,7 +30,7 @@ import java.util.List;
  * This allows us to ignore the headers on the Phone view and directly display the Preference List.
  */
 
-public class PreferenceHelper {
+class PreferenceHelper {
 
     private static final long HEADER_ID_UNDEFINED = -1;
 
