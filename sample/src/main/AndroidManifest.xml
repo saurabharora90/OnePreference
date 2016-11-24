@@ -18,10 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".WebActivity" />
-        <activity
-            android:name=".PhonePreferenceActivity"
-            android:label="@string/title_activity_phone_preference"
-            android:theme="@style/AppTheme"/>
 
         <!-- include the library default Preferences Activities -->
         <activity android:name="com.sa90.onepreference.OnePreferencePhoneActivity" />

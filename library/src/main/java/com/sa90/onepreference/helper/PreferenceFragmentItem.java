@@ -1,4 +1,4 @@
-package com.sa90.onepreference;
+package com.sa90.onepreference.helper;
 
 import android.app.Activity;
 import android.app.Fragment;

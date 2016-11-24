@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import android.support.annotation.XmlRes;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.util.Xml;
 
 import com.sa90.onepreference.R;
+import com.sa90.onepreference.model.Header;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -24,7 +24,7 @@ import java.util.List;
  *
  * This is the helper for doing the heavy lifting to be able to use the Preference v14 support library to work with both Tablets and Phones
  *
- * The process adopted involves following the standard practise of using a {@link PreferenceActivity} for tablets
+ * The process adopted involves following the standard practise of using a two pane layout for tablets
  * but for phone, we parse the header file to extract all the {@link android.support.v14.preference.PreferenceFragment}
  * and then place all those fragments in a Normal Activity inside in a vertically oriented LinearLayout.
  * This allows us to ignore the headers on the Phone view and directly display the Preference List.
@@ -41,7 +41,7 @@ public class PreferenceHelper {
      * @param resid  The XML resource to load and parse.
      * @param target The list in which the parsed headers should be placed.
      */
-    public static void loadHeadersFromResource(@XmlRes int resid, List<PreferenceActivity.Header> target, Activity mActivity) {
+    public static void loadHeadersFromResource(@XmlRes int resid, List<Header> target, Activity mActivity) {
         XmlResourceParser parser = null;
         try {
             parser = mActivity.getResources().getXml(resid);
@@ -71,7 +71,7 @@ public class PreferenceHelper {
 
                 nodeName = parser.getName();
                 if ("header".equals(nodeName)) {
-                    PreferenceActivity.Header header = new PreferenceActivity.Header();
+                    Header header = new Header();
 
                     TypedArray sa = mActivity.obtainStyledAttributes(
                             attrs, R.styleable.PreferenceHeader);
@@ -94,24 +94,6 @@ public class PreferenceHelper {
                             header.summaryRes = tv.resourceId;
                         } else {
                             header.summary = tv.string;
-                        }
-                    }
-                    tv = sa.peekValue(
-                            R.styleable.PreferenceHeader_breadCrumbTitle);
-                    if (tv != null && tv.type == TypedValue.TYPE_STRING) {
-                        if (tv.resourceId != 0) {
-                            header.breadCrumbTitleRes = tv.resourceId;
-                        } else {
-                            header.breadCrumbTitle = tv.string;
-                        }
-                    }
-                    tv = sa.peekValue(
-                            R.styleable.PreferenceHeader_breadCrumbShortTitle);
-                    if (tv != null && tv.type == TypedValue.TYPE_STRING) {
-                        if (tv.resourceId != 0) {
-                            header.breadCrumbShortTitleRes = tv.resourceId;
-                        } else {
-                            header.breadCrumbShortTitle = tv.string;
                         }
                     }
                     header.iconRes = sa.getResourceId(
