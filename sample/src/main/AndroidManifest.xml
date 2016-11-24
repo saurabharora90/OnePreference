@@ -20,8 +20,7 @@
         <activity android:name=".WebActivity" />
 
         <!-- include the library default Preferences Activities -->
-        <activity android:name="com.sa90.onepreference.OnePreferencePhoneActivity" />
-        <activity android:name="com.sa90.onepreference.OnePreferenceTabletActivity" />
+        <activity android:name="com.sa90.onepreference.OnePreferenceActivity" />
     </application>
 
 </manifest>

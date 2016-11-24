@@ -30,7 +30,7 @@ import java.util.List;
  * This allows us to ignore the headers on the Phone view and directly display the Preference List.
  */
 
-class PreferenceHelper {
+public class PreferenceHelper {
 
     private static final long HEADER_ID_UNDEFINED = -1;
 
