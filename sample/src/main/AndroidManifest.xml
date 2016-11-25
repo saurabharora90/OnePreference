@@ -21,6 +21,15 @@
 
         <!-- include the library default Preferences Activities -->
         <activity android:name="com.sa90.onepreference.OnePreferenceActivity" />
+        <activity
+            android:name=".CustomLayoutActivity"
+            android:label="@string/title_activity_custom_layout"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sa90.onepreferencedemo.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

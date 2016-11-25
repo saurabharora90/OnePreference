@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 OnePreferenceHelper.startActivity(R.xml.pref_headers, "Settings", true, this);
                 break;
             case R.id.btnCustom:
+                startActivity(new Intent(MainActivity.this, CustomLayoutActivity.class));
                 break;
         }
     }
