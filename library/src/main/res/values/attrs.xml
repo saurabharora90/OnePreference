@@ -12,4 +12,6 @@
         <!-- The fragment that is displayed when the user selects this item. -->
         <attr name="fragment" format="string" />
     </declare-styleable>
+    
+    <attr name="onePref_toolbarStyle" format="reference"/>
 </resources>
