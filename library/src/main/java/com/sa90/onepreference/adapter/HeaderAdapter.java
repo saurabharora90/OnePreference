@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by Saurabh Arora on 21/11/16.
+ * Adopted from AOSP
  */
 
 public class HeaderAdapter extends ArrayAdapter<Header> {

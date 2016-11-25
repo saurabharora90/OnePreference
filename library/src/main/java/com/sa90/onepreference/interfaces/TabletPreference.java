@@ -23,7 +23,7 @@ public interface TabletPreference extends OnePreference{
     @Nullable FrameLayout getFragmentContainerForTablet();
 
     /**
-     * Returns the {@link ListView} that will hold the Header List.
+     * Returns the {@link ListView} that will hold the Header List in tablet mode. In Phone mode, we don't display a separate header list.
      *
      * @return
      */

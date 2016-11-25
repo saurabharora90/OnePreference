@@ -11,6 +11,7 @@ import android.text.TextUtils;
 
 /**
  * Created by Saurabh Arora on 21/11/16.
+ * Adopted from AOSP
  * Description of a single Header item that the user can select.
  */
 public final class Header implements Parcelable {

@@ -38,6 +38,11 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
         setupToolbar();
     }
 
+    /**
+     * Setup the toolbar according to the Intent Extras.
+     *
+     * If this activity acts as a base class, then make sure that the intent extras are setup before starting the base class.
+     */
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.onePrefToolbar);
         if (toolbar == null)

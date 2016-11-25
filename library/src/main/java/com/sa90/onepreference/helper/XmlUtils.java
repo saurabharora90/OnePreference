@@ -5,6 +5,9 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 
+/**
+ * Adopted from AOSP
+ */
 class XmlUtils {
 
     static void skipCurrentTag(XmlPullParser parser)
