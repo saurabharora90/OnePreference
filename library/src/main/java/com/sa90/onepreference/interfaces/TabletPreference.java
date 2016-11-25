@@ -30,7 +30,7 @@ public interface TabletPreference extends OnePreference{
     @Nullable ListView getHeaderListView();
 
     /**
-     * Returns the adapter that will be attached to the header ListView
+     * Returns the adapter that will be attached to the header ListView. If you want to use the default adapter, then pass an instance to {@link com.sa90.onepreference.adapter.HeaderAdapter}
      * @return
      */
     @Nullable

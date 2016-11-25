@@ -4,6 +4,9 @@
     <string name="header1">Header 1</string>
     <string name="header2">Header 2</string>
     <string name="header3">About</string>
+    <string name="header4">Removable</string>
     <string name="title_activity_phone_preference">PhonePreferenceActivity</string>
     <string name="title_activity_custom_layout">CustomLayoutActivity</string>
+
+    <string name="pref_key_remove">key_remove</string>
 </resources>

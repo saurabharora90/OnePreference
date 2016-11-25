@@ -30,6 +30,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sa90.onepreferencedemo.MainActivity" />
         </activity>
+
+        <activity android:name=".HeaderManipulationActivity"/>
     </application>
 
 </manifest>
