@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/header2">
+        <SwitchPreference
+            android:key="key4"
+            android:title="Another Switch" />
+        <EditTextPreference
+            android:key="key5"
+            android:title="Click to enter text" />
+        <SwitchPreference
+            android:key="key12"
+            android:title="Final Switch"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>
