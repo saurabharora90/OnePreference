@@ -9,9 +9,6 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -21,13 +18,32 @@ android {
     }
 }
 
+ext {
+    // Where you will see your artifact in Bintray's web interface
+    // The "bintrayName" should match the name of the Bintray repro.
+    bintrayRepo = 'maven'
+    bintrayName = 'OnePreference'
+
+    // Maven metadata
+    publishedGroupId = 'com.sa90.onepreference'
+    libraryName = 'OnePreference'
+    // Save yourself a head ache, and set this equal to the name of the Android Studio library
+    // module. The artifact name needs to match the name of the library.
+    artifact = 'library'
+
+    libraryDescription = 'An android library to abstract out the preference implementation for Tablets and Phones'
+    libraryVersion = '1.0.0'
+
+    developerId = 'saurabharora90'
+    developerName = 'Saurabh Arora'
+    developerEmail = 'saurabharora90@gmail.com'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:preference-v14:24.2.1'
 }
+
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'
