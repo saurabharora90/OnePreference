@@ -10,7 +10,7 @@ import android.view.View;
  * Base class for {@link PreferenceFragment} to be used for anyone working with OnePreference
  */
 
-public abstract class BasePreferenceFragment extends PreferenceFragment {
+public abstract class BaseOnePreferenceFragment extends PreferenceFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

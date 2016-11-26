@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.view.View;
 
-import com.sa90.onepreference.OnePreferenceActivity;
-import com.sa90.onepreference.fragment.BasePreferenceFragment;
+import com.sa90.onepreference.fragment.BaseOnePreferenceFragment;
 import com.sa90.onepreferencedemo.HeaderManipulationActivity;
 import com.sa90.onepreferencedemo.R;
 
@@ -13,7 +12,7 @@ import com.sa90.onepreferencedemo.R;
  * Created by saurabharora on 20/11/16.
  */
 
-public class RemovableFragment extends BasePreferenceFragment {
+public class RemovableFragmentOne extends BaseOnePreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
