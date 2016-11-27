@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.sa90.onepreference.fragment.BaseOnePreferenceFragment;
 import com.sa90.onepreference.helper.PhonePreferenceHelper;
 import com.sa90.onepreference.helper.PreferenceHelper;
 import com.sa90.onepreference.helper.TabletPreferenceHelper;
@@ -39,7 +40,7 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
 
     /**
      * Provides the subclasses with an opportunity to alter (remove/add/edit) the list of {@link Header}
-     * and the corresponding {@link com.sa90.onepreference.fragment.BasePreferenceFragment} that will displayed.
+     * and the corresponding {@link BaseOnePreferenceFragment} that will displayed.
      * <p>
      * This is a good place to add or remove any items that should be rendered depending on the app state.
      *
