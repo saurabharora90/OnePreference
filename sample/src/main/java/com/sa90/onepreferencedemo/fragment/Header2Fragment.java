@@ -9,7 +9,7 @@ import com.sa90.onepreferencedemo.R;
  * Created by saurabharora on 20/11/16.
  */
 
-public class Header2FragmentOne extends BaseOnePreferenceFragment {
+public class Header2Fragment extends BaseOnePreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

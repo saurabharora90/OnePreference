@@ -9,10 +9,10 @@ import com.sa90.onepreferencedemo.R;
  * Created by saurabharora on 20/11/16.
  */
 
-public class Header1FragmentOne extends BaseOnePreferenceFragment {
+public class AboutFragment extends BaseOnePreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.pref_header1, rootKey);
+        setPreferencesFromResource(R.xml.pref_about, rootKey);
     }
 }

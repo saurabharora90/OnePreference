@@ -12,7 +12,7 @@ import com.sa90.onepreferencedemo.R;
  * Created by saurabharora on 20/11/16.
  */
 
-public class RemovableFragmentOne extends BaseOnePreferenceFragment {
+public class RemovableFragment extends BaseOnePreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

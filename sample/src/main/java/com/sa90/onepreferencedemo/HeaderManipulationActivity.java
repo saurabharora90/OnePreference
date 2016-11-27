@@ -2,7 +2,7 @@ package com.sa90.onepreferencedemo;
 
 import com.sa90.onepreference.OnePreferenceActivity;
 import com.sa90.onepreference.model.Header;
-import com.sa90.onepreferencedemo.fragment.RemovableFragmentOne;
+import com.sa90.onepreferencedemo.fragment.RemovableFragment;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class HeaderManipulationActivity extends OnePreferenceActivity {
             Header header = new Header();
             header.titleRes = R.string.header4;
             header.id = ID_HEADER_REMOVABLE;
-            header.fragment = RemovableFragmentOne.class.getName();
+            header.fragment = RemovableFragment.class.getName();
             targets.add(header);
         }
     }
