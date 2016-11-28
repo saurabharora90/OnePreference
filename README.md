@@ -1,6 +1,6 @@
 OnePreference
 =================
-A library to abstract out the preference implementation for Tablets and Phones. It presents a single list of all the preferences on the phone and the usual two pane layout on tablets. See the blog post here: https://medium.com/@saurabharora90/one-pref-for-androids-pride-b254e79f7d88
+A library which provides the ability to present all your preference in a single list on the phone, without the two-step header and detail approach followed by the Android SDK. For tablets, it uses the two pane layout. See the blog post here: https://medium.com/@saurabharora90/one-pref-for-androids-pride-b254e79f7d88
 
 ![Tablet - Phone Layout](https://github.com/saurabharora90/OnePreference/blob/develop/screenshot.png?raw=true)
 
