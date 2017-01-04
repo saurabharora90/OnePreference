@@ -13,7 +13,7 @@ Usage
 Add a dependency to your `build.gradle`:
 
     dependencies {
-    compile 'com.sa90.onepreference:library:1.0.1'
+    compile 'com.sa90.onepreference:library:1.0.2'
 }
 
 The library provides an abstract class (BaseOnePreferenceActivity) and an out of box implementation (OnePreferenceActivity). If you are comfortable with using the out of box implementation, then include it in your manifest file.
