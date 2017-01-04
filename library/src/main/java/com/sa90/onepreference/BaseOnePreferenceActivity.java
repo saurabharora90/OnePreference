@@ -61,8 +61,9 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
     /**
      * Provides the subclasses with an opportunity to handle a click on a header item
      * @param clickedHeader
+     * @param position
      */
-    public void headerClicked(Header clickedHeader) {
+    public void headerClicked(Header clickedHeader, int position) {
         mTabletPreferenceHelper.switchFragment(clickedHeader);
     }
 
@@ -108,7 +109,7 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
             mHeaderAdapter.notifyDataSetChanged();
         }
         Header clickedHeader = mHeaderAdapter.getItem(0);
-        headerClicked(clickedHeader);
+        headerClicked(clickedHeader, 0);
         lv.setItemChecked(0,true);
     }
 
@@ -122,6 +123,6 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Header clickedHeader = mHeaderAdapter.getItem(position);
-        headerClicked(clickedHeader);
+        headerClicked(clickedHeader, position);
     }
 }
