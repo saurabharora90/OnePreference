@@ -1,6 +1,6 @@
 package com.sa90.onepreference.helper;
 
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.sa90.onepreference.interfaces.TabletPreference;
@@ -24,7 +24,7 @@ public class TabletPreferenceHelper {
         PreferenceFragmentItem preferenceFragmentItem = new PreferenceFragmentItem(clickedHeader.fragment,
                 clickedHeader.fragment, clickedHeader.fragmentArguments);
 
-        FragmentTransaction transaction = mActivity.getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
         transaction.replace(mTabletPreference.getFragmentContainerForTablet().getId(),
                 preferenceFragmentItem.createFragment(mActivity), preferenceFragmentItem.getTag());
         transaction.commit();

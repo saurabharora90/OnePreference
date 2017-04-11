@@ -1,6 +1,6 @@
 package com.sa90.onepreference.helper;
 
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
@@ -34,7 +34,7 @@ public class PhonePreferenceHelper {
 
         container.removeAllViews();
 
-        FragmentTransaction transaction = mActivity.getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
         for (PreferenceFragmentItem item : fragmentItemList) {
             transaction.add(container.getId(), item.createFragment(mActivity), item.getTag());
         }

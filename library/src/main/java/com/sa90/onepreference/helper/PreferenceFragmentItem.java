@@ -1,15 +1,15 @@
 package com.sa90.onepreference.helper;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.v4.app.Fragment;
 
 /**
  * Created by Saurabh Arora on 20/11/16.
  *
- * Note: Use this only to wrap {@link Fragment} which extend from {@link android.support.v14.preference.PreferenceFragment} and not for anything else
+ * Note: Use this only to wrap {@link Fragment} which extend from {@link android.support.v7.preference.PreferenceFragmentCompat} and not for anything else
  */
 class PreferenceFragmentItem implements Parcelable {
 
@@ -28,7 +28,6 @@ class PreferenceFragmentItem implements Parcelable {
     }
 
     /**
-     * Beacuse of some weird reason, the preference support library extends form {@link Fragment} and not from {@link android.support.v4.app.Fragment}
      * @param activity
      * @return
      */
