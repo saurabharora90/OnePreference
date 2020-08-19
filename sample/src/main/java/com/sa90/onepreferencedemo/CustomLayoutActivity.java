@@ -2,14 +2,14 @@ package com.sa90.onepreferencedemo;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,13 +17,13 @@ import com.sa90.onepreference.BaseOnePreferenceActivity;
 import com.sa90.onepreference.adapter.HeaderAdapter;
 import com.sa90.onepreference.model.Header;
 
-import java.util.List;
+import kotlin.Unit;
 
 public class CustomLayoutActivity extends BaseOnePreferenceActivity {
 
     LinearLayout llContainer;
     FrameLayout flContainer;
-    ListView lvHeader;
+    RecyclerView lvHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class CustomLayoutActivity extends BaseOnePreferenceActivity {
 
         llContainer = findViewById(com.sa90.onepreference.R.id.llContainer);
         flContainer = findViewById(com.sa90.onepreference.R.id.flContainer);
-        lvHeader = findViewById(com.sa90.onepreference.R.id.lvHeader);
+        lvHeader = findViewById(com.sa90.onepreference.R.id.rvHeader);
     }
 
     @Nullable
@@ -61,14 +61,17 @@ public class CustomLayoutActivity extends BaseOnePreferenceActivity {
 
     @Nullable
     @Override
-    public ListView getHeaderListView() {
+    public RecyclerView getHeaderRecyclerView() {
         return lvHeader;
     }
 
     @Nullable
     @Override
-    public ArrayAdapter<Header> getHeaderListAdapter(List<Header> headerList) {
-        return new HeaderAdapter(this, headerList);
+    public ListAdapter<Header, ? extends RecyclerView.ViewHolder> getHeaderAdapter() {
+        return new HeaderAdapter(header -> {
+            showFragmentForHeader(header);
+            return Unit.INSTANCE;
+        });
     }
 
     @NonNull

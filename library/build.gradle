@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -14,6 +15,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -44,6 +50,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
     api "androidx.preference:preference-ktx:$preference_version"
     implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+    api "androidx.recyclerview:recyclerview:$recyclerviewVersion"
 }
 
 apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'

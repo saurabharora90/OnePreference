@@ -16,8 +16,8 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <ListView
-            android:id="@+id/lvHeader"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHeader"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"

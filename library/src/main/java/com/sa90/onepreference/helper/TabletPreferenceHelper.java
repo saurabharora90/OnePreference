@@ -11,8 +11,8 @@ public class TabletPreferenceHelper {
     private TabletPreference mTabletPreference;
     private AppCompatActivity mActivity;
 
-    public TabletPreferenceHelper(TabletPreference phonePreference, AppCompatActivity activity) {
-        this.mTabletPreference = phonePreference;
+    public TabletPreferenceHelper(TabletPreference tabletPreference, AppCompatActivity activity) {
+        this.mTabletPreference = tabletPreference;
         this.mActivity = activity;
     }
 

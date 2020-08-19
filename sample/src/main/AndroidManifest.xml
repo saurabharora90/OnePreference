@@ -18,8 +18,6 @@
         </activity>
         <activity android:name=".WebActivity" />
 
-        <!-- include the library default Preferences Activities -->
-        <activity android:name="com.sa90.onepreference.OnePreferenceActivity" />
         <activity
             android:name=".CustomLayoutActivity"
             android:label="@string/title_activity_custom_layout"

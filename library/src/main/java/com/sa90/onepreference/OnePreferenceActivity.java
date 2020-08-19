@@ -2,26 +2,26 @@ package com.sa90.onepreference;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.sa90.onepreference.adapter.HeaderAdapter;
 import com.sa90.onepreference.model.Header;
 
-import java.util.List;
+import kotlin.Unit;
 
 public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
     LinearLayout llContainer;
     FrameLayout flContainer;
-    ListView lvHeader;
+    RecyclerView rvHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +30,14 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
         llContainer = findViewById(R.id.llContainer);
         flContainer = findViewById(R.id.flContainer);
-        lvHeader = findViewById(R.id.lvHeader);
+        rvHeader = findViewById(R.id.rvHeader);
 
         setupToolbar();
     }
 
     /**
      * Setup the toolbar according to the Intent Extras.
-     *
+     * <p>
      * If this activity acts as a base class, then make sure that the intent extras are setup before starting the base class.
      */
     private void setupToolbar() {
@@ -62,7 +62,7 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home) {
+        if (item.getItemId() == android.R.id.home) {
             onBackPressed();
             return true;
         }
@@ -83,14 +83,17 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
     @Nullable
     @Override
-    public ListView getHeaderListView() {
-        return lvHeader;
+    public RecyclerView getHeaderRecyclerView() {
+        return rvHeader;
     }
 
     @Nullable
     @Override
-    public ArrayAdapter<Header> getHeaderListAdapter(List<Header> headerList) {
-        return new HeaderAdapter(this, headerList);
+    public ListAdapter<Header, ? extends RecyclerView.ViewHolder> getHeaderAdapter() {
+        return new HeaderAdapter(header -> {
+            showFragmentForHeader(header);
+            return Unit.INSTANCE;
+        });
     }
 
     @NonNull

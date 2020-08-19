@@ -1,16 +1,14 @@
 package com.sa90.onepreference;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.sa90.onepreference.fragment.BaseOnePreferenceFragment;
 import com.sa90.onepreference.helper.PhonePreferenceHelper;
@@ -22,9 +20,14 @@ import com.sa90.onepreference.model.Header;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class BaseOnePreferenceActivity extends AppCompatActivity
-        implements PhonePreference, TabletPreference, AdapterView.OnItemClickListener {
+        implements PhonePreference, TabletPreference {
+
+    PhonePreferenceHelper mPhonePreferenceHelper;
+    TabletPreferenceHelper mTabletPreferenceHelper;
+    ListAdapter<Header, ? extends RecyclerView.ViewHolder> mHeaderAdapter;
 
     /**
      * Returns true if the the preferences are being displayed in tablet mode.
@@ -56,17 +59,13 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
     }
 
     /**
-     * Provides the subclasses with an opportunity to handle a click on a header item
+     * Displays the PreferenceFragmentCompat associated with the header
+     *
      * @param clickedHeader
-     * @param position
      */
-    public void headerClicked(Header clickedHeader, int position) {
+    public void showFragmentForHeader(Header clickedHeader) {
         mTabletPreferenceHelper.switchFragment(clickedHeader);
     }
-
-    PhonePreferenceHelper mPhonePreferenceHelper;
-    TabletPreferenceHelper mTabletPreferenceHelper;
-    ArrayAdapter<Header> mHeaderAdapter;
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
@@ -92,22 +91,16 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
     }
 
     private void setupForTablet() {
-        ListView lv = getHeaderListView();
-        if(mTabletPreferenceHelper == null) {
+        RecyclerView rv = getHeaderRecyclerView();
+        Objects.requireNonNull(rv);
+        if (mTabletPreferenceHelper == null) {
             mTabletPreferenceHelper = new TabletPreferenceHelper(this, this);
-            mHeaderAdapter = getHeaderListAdapter(getHeadersList());
-            lv.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
-            lv.setAdapter(mHeaderAdapter);
-            lv.setOnItemClickListener(this);
+            mHeaderAdapter = getHeaderAdapter();
+            rv.setLayoutManager(new LinearLayoutManager(this));
+            rv.setAdapter(mHeaderAdapter);
         }
-        else {
-            mHeaderAdapter.clear();
-            mHeaderAdapter.addAll(getHeadersList());
-            mHeaderAdapter.notifyDataSetChanged();
-        }
-        Header clickedHeader = mHeaderAdapter.getItem(0);
-        headerClicked(clickedHeader, 0);
-        lv.setItemChecked(0,true);
+        List<Header> headerList = getHeadersList();
+        mHeaderAdapter.submitList(headerList);
     }
 
     private List<Header> getHeadersList() {
@@ -115,11 +108,5 @@ public abstract class BaseOnePreferenceActivity extends AppCompatActivity
         PreferenceHelper.loadHeadersFromResource(getHeaderFile(), headerList, this);
         touchUpHeadersBeforeDisplay(headerList);
         return headerList;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Header clickedHeader = mHeaderAdapter.getItem(position);
-        headerClicked(clickedHeader, position);
     }
 }

@@ -6,8 +6,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/lvHeader"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHeader"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"

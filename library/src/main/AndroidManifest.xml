@@ -6,6 +6,7 @@
         android:allowBackup="false"
         android:label="@string/app_name">
 
+        <activity android:name="com.sa90.onepreference.OnePreferenceActivity" />
     </application>
 
 </manifest>

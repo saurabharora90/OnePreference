@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:minHeight="48dp"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:paddingLeft="24dp"
+    android:paddingHorizontal="24dp"
     android:gravity="center_vertical">
 
     <ImageView
@@ -16,18 +16,16 @@
         android:layout_gravity="center" />
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dip"
-        android:layout_marginRight="6dip"
-        android:layout_marginTop="6dip"
-        android:layout_marginBottom="6dip"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="6dp"
         android:layout_weight="1">
 
         <TextView android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:lines="1"
+            android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:ellipsize="marquee"
             android:fadingEdge="horizontal" />
@@ -36,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTitle"
-            android:layout_alignLeft="@id/tvTitle"
+            android:layout_alignStart="@id/tvTitle"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:ellipsize="end"
             android:maxLines="2" />
