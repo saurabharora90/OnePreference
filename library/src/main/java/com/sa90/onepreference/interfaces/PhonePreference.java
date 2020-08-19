@@ -1,11 +1,8 @@
 package com.sa90.onepreference.interfaces;
 
-import android.support.annotation.Nullable;
 import android.widget.LinearLayout;
 
-/**
- * Created by Saurabh Arora on 24/11/16.
- */
+import androidx.annotation.Nullable;
 
 public interface PhonePreference extends OnePreference {
 
@@ -15,5 +12,6 @@ public interface PhonePreference extends OnePreference {
      *
      * @return the {@link android.widget.LinearLayout} that will hold the fragments
      */
-    @Nullable LinearLayout getFragmentContainerForPhone();
+    @Nullable
+    LinearLayout getFragmentContainerForPhone();
 }

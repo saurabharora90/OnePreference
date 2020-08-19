@@ -3,7 +3,7 @@
     package="com.sa90.onepreference">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:label="@string/app_name">
 
     </application>

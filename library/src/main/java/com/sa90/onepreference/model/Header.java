@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.PreferenceActivity;
-import android.support.annotation.StringRes;
 import android.text.TextUtils;
 
+import androidx.annotation.StringRes;
+
 /**
- * Created by Saurabh Arora on 21/11/16.
  * Adopted from AOSP
  * Description of a single Header item that the user can select.
  */
@@ -146,11 +146,11 @@ public final class Header implements Parcelable {
         summary = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
         iconRes = in.readInt();
         fragment = in.readString();
-        fragmentArguments = in.readBundle();
+        fragmentArguments = in.readBundle(getClass().getClassLoader());
         if (in.readInt() != 0) {
             intent = Intent.CREATOR.createFromParcel(in);
         }
-        extras = in.readBundle();
+        extras = in.readBundle(getClass().getClassLoader());
     }
 
     Header(Parcel in) {

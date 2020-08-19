@@ -1,7 +1,6 @@
 package com.sa90.onepreference.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +9,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.sa90.onepreference.R;
 import com.sa90.onepreference.model.Header;
 
 import java.util.List;
 
 /**
- * Created by Saurabh Arora on 21/11/16.
  * Adopted from AOSP
  */
 

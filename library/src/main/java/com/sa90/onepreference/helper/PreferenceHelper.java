@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import android.support.annotation.XmlRes;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.util.Xml;
+
+import androidx.annotation.XmlRes;
 
 import com.sa90.onepreference.R;
 import com.sa90.onepreference.model.Header;
@@ -20,12 +21,10 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Saurabh Arora on 20/11/16.
- *
  * This is the helper for doing the heavy lifting to be able to use the Preference v14 support library to work with both Tablets and Phones
  *
  * The process adopted involves following the standard practise of using a two pane layout for tablets
- * but for phone, we parse the header file to extract all the {@link android.support.v14.preference.PreferenceFragment}
+ * but for phone, we parse the header file to extract all the {@link androidx.preference.PreferenceFragmentCompat}
  * and then place all those fragments in a Normal Activity inside in a vertically oriented LinearLayout.
  * This allows us to ignore the headers on the Phone view and directly display the Preference List.
  */

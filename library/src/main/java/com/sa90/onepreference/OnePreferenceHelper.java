@@ -1,13 +1,10 @@
 package com.sa90.onepreference;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.XmlRes;
 
-/**
- * Created by Saurabh Arora on 20/11/16.
- */
+import androidx.annotation.DrawableRes;
+import androidx.annotation.XmlRes;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class OnePreferenceHelper {
 
@@ -23,7 +20,7 @@ public class OnePreferenceHelper {
      * @param title
      * @param callingActivity
      */
-    public static void startActivity(@XmlRes int headerRes, String title, Activity callingActivity) {
+    public static void startActivity(@XmlRes int headerRes, String title, AppCompatActivity callingActivity) {
         startActivity(headerRes, title, false, callingActivity);
     }
 
@@ -35,7 +32,7 @@ public class OnePreferenceHelper {
      * @param showBack        if the back icon should be shown next to the title in the toolbar
      * @param callingActivity
      */
-    public static void startActivity(@XmlRes int headerRes, String title, boolean showBack, Activity callingActivity) {
+    public static void startActivity(@XmlRes int headerRes, String title, boolean showBack, AppCompatActivity callingActivity) {
         startActivity(headerRes, title, showBack, -1, callingActivity);
     }
 
@@ -48,7 +45,7 @@ public class OnePreferenceHelper {
      * @param upIcon          can be -1 if you want to use the default icon as the back icon
      * @param callingActivity
      */
-    public static void startActivity(@XmlRes int headerRes, String title, boolean showBack, @DrawableRes int upIcon, Activity callingActivity) {
+    public static void startActivity(@XmlRes int headerRes, String title, boolean showBack, @DrawableRes int upIcon, AppCompatActivity callingActivity) {
         Intent intent = new Intent(callingActivity, OnePreferenceActivity.class);
         intent.putExtra(EXTRA_HEADER_RES, headerRes);
         intent.putExtra(EXTRA_TITLE, title);

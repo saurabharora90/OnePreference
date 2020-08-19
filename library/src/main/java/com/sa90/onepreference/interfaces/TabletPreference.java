@@ -1,17 +1,14 @@
 package com.sa90.onepreference.interfaces;
 
-import android.support.annotation.Nullable;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
+import androidx.annotation.Nullable;
+
 import com.sa90.onepreference.model.Header;
 
 import java.util.List;
-
-/**
- * Created by Saurabh Arora on 24/11/16.
- */
 
 public interface TabletPreference extends OnePreference{
 
@@ -20,7 +17,8 @@ public interface TabletPreference extends OnePreference{
      *
      * @return the {@link FrameLayout} that will hold the fragments
      */
-    @Nullable FrameLayout getFragmentContainerForTablet();
+    @Nullable
+    FrameLayout getFragmentContainerForTablet();
 
     /**
      * Returns the {@link ListView} that will hold the Header List in tablet mode. In Phone mode, we don't display a separate header list.

@@ -1,14 +1,10 @@
 package com.sa90.onepreference.helper;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.sa90.onepreference.interfaces.TabletPreference;
 import com.sa90.onepreference.model.Header;
-
-/**
- * Created by Saurabh Arora on 24/11/16.
- */
 
 public class TabletPreferenceHelper {
 

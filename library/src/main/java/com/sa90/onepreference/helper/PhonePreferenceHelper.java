@@ -1,18 +1,16 @@
 package com.sa90.onepreference.helper;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.sa90.onepreference.interfaces.PhonePreference;
 import com.sa90.onepreference.model.Header;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by Saurabh Arora on 24/11/16.
- */
+import java.util.Objects;
 
 public class PhonePreferenceHelper {
 
@@ -25,6 +23,7 @@ public class PhonePreferenceHelper {
     }
 
     public void setupScreen(List<Header> headerList) {
+        Objects.requireNonNull(mPhonePreference.getFragmentContainerForPhone());
         setupFragments(mPhonePreference.getFragmentContainerForPhone(), getPreferenceFragmentList(headerList));
     }
 

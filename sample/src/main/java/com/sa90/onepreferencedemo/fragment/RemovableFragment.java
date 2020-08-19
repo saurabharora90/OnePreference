@@ -1,16 +1,17 @@
 package com.sa90.onepreferencedemo.fragment;
 
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
 import android.view.View;
+
+import androidx.preference.Preference;
 
 import com.sa90.onepreference.fragment.BaseOnePreferenceFragment;
 import com.sa90.onepreferencedemo.HeaderManipulationActivity;
 import com.sa90.onepreferencedemo.R;
 
-/**
- * Created by saurabharora on 20/11/16.
- */
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class RemovableFragment extends BaseOnePreferenceFragment {
 
@@ -20,16 +21,17 @@ public class RemovableFragment extends BaseOnePreferenceFragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        findPreference(getString(R.string.pref_key_remove)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                if(getActivity() instanceof HeaderManipulationActivity)
-                    ((HeaderManipulationActivity) getActivity()).setShouldRemove(true);
-                    ((HeaderManipulationActivity) getActivity()).invalidateHeaders();
-                return true;
-            }
-        });
+        Objects.requireNonNull(findPreference(getString(R.string.pref_key_remove)))
+                .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        if (requireActivity() instanceof HeaderManipulationActivity)
+                            ((HeaderManipulationActivity) requireActivity()).setShouldRemove(true);
+                        ((HeaderManipulationActivity) requireActivity()).invalidateHeaders();
+                        return true;
+                    }
+                });
     }
 }

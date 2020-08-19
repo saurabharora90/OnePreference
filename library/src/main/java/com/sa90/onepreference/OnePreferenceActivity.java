@@ -1,24 +1,21 @@
 package com.sa90.onepreference;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+
 import com.sa90.onepreference.adapter.HeaderAdapter;
 import com.sa90.onepreference.model.Header;
 
 import java.util.List;
-
-/**
- * Created by Saurabh Arora on 24/11/16.
- */
 
 public class OnePreferenceActivity extends BaseOnePreferenceActivity {
 
@@ -31,9 +28,9 @@ public class OnePreferenceActivity extends BaseOnePreferenceActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_preference);
 
-        llContainer = (LinearLayout) findViewById(R.id.llContainer);
-        flContainer = (FrameLayout) findViewById(R.id.flContainer);
-        lvHeader = (ListView) findViewById(R.id.lvHeader);
+        llContainer = findViewById(R.id.llContainer);
+        flContainer = findViewById(R.id.flContainer);
+        lvHeader = findViewById(R.id.lvHeader);
 
         setupToolbar();
     }

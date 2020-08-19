@@ -1,8 +1,6 @@
 package com.sa90.onepreference;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -10,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sa90.onepreference.fragment.BaseOnePreferenceFragment;
 import com.sa90.onepreference.helper.PhonePreferenceHelper;
@@ -21,10 +22,6 @@ import com.sa90.onepreference.model.Header;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by Saurabh Arora on 24/11/16.
- */
 
 public abstract class BaseOnePreferenceActivity extends AppCompatActivity
         implements PhonePreference, TabletPreference, AdapterView.OnItemClickListener {

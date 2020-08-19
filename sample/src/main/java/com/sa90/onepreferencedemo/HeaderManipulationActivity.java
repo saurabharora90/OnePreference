@@ -6,10 +6,6 @@ import com.sa90.onepreferencedemo.fragment.RemovableFragment;
 
 import java.util.List;
 
-/**
- * Created by saurabharora on 25/11/16.
- */
-
 public class HeaderManipulationActivity extends OnePreferenceActivity {
 
     boolean shouldRemove = false;

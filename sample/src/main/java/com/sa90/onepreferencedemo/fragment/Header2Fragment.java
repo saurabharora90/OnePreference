@@ -5,10 +5,6 @@ import android.os.Bundle;
 import com.sa90.onepreference.fragment.BaseOnePreferenceFragment;
 import com.sa90.onepreferencedemo.R;
 
-/**
- * Created by saurabharora on 20/11/16.
- */
-
 public class Header2Fragment extends BaseOnePreferenceFragment {
 
     @Override
