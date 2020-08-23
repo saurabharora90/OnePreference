@@ -107,12 +107,12 @@ object OnePreferenceHelper {
                             val innerNodeName = parser.name
                             if (innerNodeName == "extra") {
                                 context.resources.parseBundleExtra("extra", attrs, curBundle)
-                                XmlUtils.skipCurrentTag(parser)
+                                parser.skipCurrentTag()
                             } else if (innerNodeName == "intent") {
                                 header.intent =
                                     Intent.parseIntent(context.resources, parser, attrs)
                             } else {
-                                XmlUtils.skipCurrentTag(parser)
+                                parser.skipCurrentTag()
                             }
                         }
                         if (curBundle.size() > 0) {
@@ -122,7 +122,7 @@ object OnePreferenceHelper {
                         target.add(header)
                     }
                 } else {
-                    XmlUtils.skipCurrentTag(parser)
+                    parser.skipCurrentTag()
                 }
             }
         } catch (e: XmlPullParserException) {
