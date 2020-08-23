@@ -10,7 +10,7 @@
         android:id="@+id/containerView"
         android:name="com.sa90.onepreference.SingleColumnPreferenceFragment"
         android:layout_width="match_parent"
-        android:tag="my_tag"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:onepref_headerFile="@xml/pref_headers"/>
 
 </androidx.core.widget.NestedScrollView>

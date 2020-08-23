@@ -20,9 +20,8 @@
         android:layout_height="?attr/listPreferredItemHeightSmall"
         android:background="?attr/selectableItemBackground"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Out of box implementation" />
+        android:paddingHorizontal="16dp"
+        android:text="Simple Demo" />
 
     <TextView
         android:id="@+id/btnCustom"
@@ -30,18 +29,7 @@
         android:layout_height="?attr/listPreferredItemHeightSmall"
         android:background="?attr/selectableItemBackground"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Custom layout implementation" />
-
-    <TextView
-        android:id="@+id/btnHeader"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/listPreferredItemHeightSmall"
-        android:background="?attr/selectableItemBackground"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Header Manipulation Activity" />
+        android:paddingHorizontal="16dp"
+        android:text="Dynamic Preference Demo" />
 
 </LinearLayout>

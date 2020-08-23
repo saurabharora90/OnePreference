@@ -12,6 +12,15 @@
         <!-- The fragment that is displayed when the user selects this item. -->
         <attr name="fragment" format="string" />
     </declare-styleable>
-    
-    <attr name="onePref_toolbarStyle" format="reference"/>
+
+    <declare-styleable name="BaseOnePreferenceFragment">
+        <!--The PreferenceHeader file-->
+        <attr name="onepref_headerFile" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="TwoColumnPreferenceFragment">
+        <attr name="onepref_firstColumnWeight" format="float"/>
+
+        <attr name="onepref_secondColumnWeight" format="float"/>
+    </declare-styleable>
 </resources>

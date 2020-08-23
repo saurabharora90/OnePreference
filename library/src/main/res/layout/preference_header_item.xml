@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="48dp"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:paddingHorizontal="24dp"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:paddingHorizontal="24dp">
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="6dip"
-        android:layout_marginEnd="6dip"
-        android:layout_gravity="center" />
+        android:layout_marginEnd="6dip" />
 
     <RelativeLayout
         android:layout_width="0dp"
@@ -22,22 +22,24 @@
         android:layout_marginVertical="6dp"
         android:layout_weight="1">
 
-        <TextView android:id="@+id/tvTitle"
+        <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:ellipsize="marquee"
-            android:fadingEdge="horizontal" />
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:textAppearance="?attr/textAppearanceListItem" />
 
-        <TextView android:id="@+id/tvSummary"
+        <TextView
+            android:id="@+id/tvSummary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTitle"
             android:layout_alignStart="@id/tvTitle"
-            android:textAppearance="?android:attr/textAppearanceSmall"
             android:ellipsize="end"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:textAppearance="?attr/textAppearanceListItemSecondary" />
 
     </RelativeLayout>
 

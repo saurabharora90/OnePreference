@@ -21,6 +21,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 ext {
@@ -51,6 +55,7 @@ dependencies {
     api "androidx.preference:preference-ktx:$preference_version"
     implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
     api "androidx.recyclerview:recyclerview:$recyclerviewVersion"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
 }
 
 apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'

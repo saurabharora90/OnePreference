@@ -9,6 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CustomDemoActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WebActivity" />
-
         <activity
-            android:name=".CustomLayoutActivity"
+            android:name=".SimpleDemoActivity"
             android:label="@string/title_activity_custom_layout"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
@@ -27,8 +27,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sa90.onepreferencedemo.MainActivity" />
         </activity>
-
-        <activity android:name=".HeaderManipulationActivity"/>
     </application>
 
 </manifest>

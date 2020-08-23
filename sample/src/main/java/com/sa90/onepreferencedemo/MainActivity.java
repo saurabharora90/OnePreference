@@ -7,8 +7,6 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.sa90.onepreference.OnePreferenceHelper;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -18,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btnNormal).setOnClickListener(this);
         findViewById(R.id.btnCustom).setOnClickListener(this);
-        findViewById(R.id.btnHeader).setOnClickListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -28,17 +25,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnNormal:
-                OnePreferenceHelper.startActivity(R.xml.pref_headers, "Settings", true, this);
+                startActivity(new Intent(MainActivity.this, SimpleDemoActivity.class));
                 break;
             case R.id.btnCustom:
-                startActivity(new Intent(MainActivity.this, CustomLayoutActivity.class));
-                break;
-            case R.id.btnHeader:
-                Intent intent = new Intent(MainActivity.this, HeaderManipulationActivity.class);
-                intent.putExtra(OnePreferenceHelper.EXTRA_HEADER_RES, R.xml.pref_headers);
-                intent.putExtra(OnePreferenceHelper.EXTRA_TITLE, "Custom Settings");
-                intent.putExtra(OnePreferenceHelper.EXTRA_SHOW_BACK, true);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, CustomDemoActivity.class));
                 break;
         }
     }

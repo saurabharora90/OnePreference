@@ -81,11 +81,6 @@ public final class Header implements Parcelable {
      */
     public Intent intent;
 
-    /**
-     * Optional additional data for use by subclasses of PreferenceActivity.
-     */
-    public Bundle extras;
-
     public Header() {
         // Empty
     }
@@ -135,7 +130,6 @@ public final class Header implements Parcelable {
         } else {
             dest.writeInt(0);
         }
-        dest.writeBundle(extras);
     }
 
     public void readFromParcel(Parcel in) {
@@ -150,7 +144,6 @@ public final class Header implements Parcelable {
         if (in.readInt() != 0) {
             intent = Intent.CREATOR.createFromParcel(in);
         }
-        extras = in.readBundle(getClass().getClassLoader());
     }
 
     Header(Parcel in) {

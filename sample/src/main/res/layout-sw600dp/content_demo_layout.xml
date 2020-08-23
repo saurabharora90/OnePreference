@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:tag="my_tag"
         app:onepref_firstColumnWeight="0.3"
+        app:onepref_headerFile="@xml/pref_headers"
         app:onepref_secondColumnWeight="0.7" />
 
 </LinearLayout>
